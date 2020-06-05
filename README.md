@@ -21,4 +21,8 @@ Open the src code in your favorite Java-equipped IDE or text editor!
 
 ## By Tan Nguyen, Joseph Heitman, Maryanne Choeun, and Griffin Ryan
 
+Here is a screenshot of an early build of the game.
+
+![earlybuild.png](https://torpoisebucket.s3-us-west-2.amazonaws.com/earlybuild.png)
+
 Go see [Tacoma Community College](https://tacomacc.edu/) now!
