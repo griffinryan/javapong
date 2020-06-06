@@ -18,8 +18,8 @@ public class PongPanel extends JPanel {
 	private BouncingBall ball;
 	private JLabel scoreLabel;
 	private int score = 0;
-	//public String timer;
-	int bx, xSpeed;
+	Timer timer;
+	int speed = 5;
 	
 	public PongPanel(PingPong game) {
 		racket = new Player(game, game.getHeight() - 100);
@@ -29,11 +29,24 @@ public class PongPanel extends JPanel {
 		scoreLabel.setFont(new Font("arial", Font.PLAIN, 30));
 		add(scoreLabel);
 
-		Timer timer = new Timer(5, new TimerHandler());
+		timer = new Timer(speed, new TimerHandler());
 		timer.start();
 
 		addKeyListener(new KeyHandler());
 		setFocusable(true);
+	}
+	private class TimerHandler implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			//speed up ball at score 5 but come back to normal speed right after that.
+			if(score % 5 == 0 && score!= 0) {
+				timer = new Timer(speed+1, new TimerHandler());
+				update();
+			}
+			update();
+			
+		}
 	}
 
 	private void update() {
@@ -105,15 +118,6 @@ public class PongPanel extends JPanel {
 
 		
 		public void keyTyped(KeyEvent e) {
-		}
-	}
-
-	private class TimerHandler implements ActionListener {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// xSpeed+=3;
-			// bx+=xSpeed;			
-			update();
 		}
 	}
 }
