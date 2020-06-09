@@ -11,7 +11,6 @@ import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
-
 public class PingPong extends JFrame { 
 	
     static int[][] board = 
