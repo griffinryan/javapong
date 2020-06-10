@@ -2,13 +2,13 @@
 
 ![pong.gif](https://torpoisebucket.s3-us-west-2.amazonaws.com/pong.gif)
 
-![tacoma.png](https://torpoisebucket.s3-us-west-2.amazonaws.com/tacoma.png)
-
 Source code for a Pong game by Tan Nguyen, Joseph Heitman, Maryanne Choeun, and Griffin Ryan.
 
 Built on Java.
 
 See the school website [here!](https://tacomacc.edu/)
+
+![tacoma.png](https://torpoisebucket.s3-us-west-2.amazonaws.com/tacoma.png)
 
 ## Building
 
