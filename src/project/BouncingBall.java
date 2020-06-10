@@ -22,18 +22,18 @@ public class BouncingBall extends Sprite {
     }
 
     public void paint(Graphics g) {
-        /* Update color values for glow. */
-        if(red >= 80 && red <= 254){
-            red = red + 1;
-            if(red == 254){
-                // Set count equal to 1 for reversing glow.
-                colorCount = 1;
-            }
-        } else if(red >= 254 || colorCount == 1){
+        /* Update color values for glow. || red >= 253 and && red >= 80 && red <= 254*/
+        if(colorCount == 1){
             red = red - 1;
             if(red == 80){
                 // Set count equal to 0.
                 colorCount = 0;
+            }
+        } else if(colorCount == 0){
+            red = red + 1;
+            if(red == 254){
+                // Set count equal to 1 for reversing glow.
+                colorCount = 1;
             }
         }
 
