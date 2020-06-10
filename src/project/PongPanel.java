@@ -36,16 +36,16 @@ public class PongPanel extends JPanel {
 				speed = 5;
 
 			else if (userInput.equalsIgnoreCase("3"))
-				speed = 2;
+				speed = 3;
 			// catching wrong number input
 			else {
 				JOptionPane.showMessageDialog(null, "Please type in 1, 2 or 3");
-				input(); // return back to difficult option panel
+				input(); // return to difficult option panel
 			}
 			// catching letter input
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Please type in number only");
-			input();// return back to difficult option panel
+			input();// return to difficult option panel
 		}
 		return speed;
 	}
@@ -83,8 +83,6 @@ public class PongPanel extends JPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-
-			// speed up ball at score 5 but come back to normal speed right after that.
 			/*
 			 * Tried to making the speed incrementation obvious, but not as hard to beat.
 			 * Doesn't work though. Just start with lower speed instead. Speed = 4.
@@ -97,9 +95,7 @@ public class PongPanel extends JPanel {
 				update();
 			}
 			update();
-
 		}
-
 	}
 
 	private void update() {
@@ -107,7 +103,6 @@ public class PongPanel extends JPanel {
 		ball.newPosition();
 		hitSidesCheck();
 		hitRacketCheck();
-
 		repaint();
 	}
 
@@ -139,15 +134,9 @@ public class PongPanel extends JPanel {
 				&& racket.getBounds().x + racket.getWidth() > ball.getBounds().x) {
 			ball.setYA(-ball.getYA() - 1); // minus 1 will change its bouncing route
 											// Problem: Ball speed up every hit to racket
-			// ball.setColor(Color.GREEN); //Trying to change ball's color after hit racket
 			score += 1;
 			scoreLabel.setText(Integer.toString(score));
-			/**
-			 * double doubleTimer = Double.parseDouble(timer); //speeding up after certain
-			 * score but not working doubleTimer+=1; timer = Double.toString( doubleTimer);
-			 */
 		}
-
 	}
 
 	@Override
@@ -156,7 +145,6 @@ public class PongPanel extends JPanel {
 		super.paint(g);
 		racket.paint(g);
 		ball.paint(g);
-
 	}
 
 	private class KeyHandler implements KeyListener {
