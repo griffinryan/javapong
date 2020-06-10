@@ -23,6 +23,10 @@ Open the src code in your favorite Java-equipped IDE or text editor!
 
 ## By Tan Nguyen, Joseph Heitman, Maryanne Choeun, and Griffin Ryan
 
+Here is a gif of a more recent build of the game.
+
+![pong.gif](https://torpoisebucket.s3-us-west-2.amazonaws.com/pong.gif)
+
 Here is a screenshot of an early build of the game.
 
 ![earlybuild.png](https://torpoisebucket.s3-us-west-2.amazonaws.com/earlybuild.png)
