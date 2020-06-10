@@ -1,5 +1,6 @@
 package project;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -55,7 +56,7 @@ public class PingPong extends JFrame {
 		frame.setVisible(true);
 		return board;		
 	}
-	
+
     public PingPong() {
         super("PingPong by Team 5");
         setSize(800, 500);
@@ -64,7 +65,7 @@ public class PingPong extends JFrame {
         add(new PongPanel(this));
         setVisible(true);
         Dimension scnSize = Toolkit.getDefaultToolkit().getScreenSize();
-        setLocation(scnSize.width/4, 0);
+		setLocation(scnSize.width/4, 0);
     }
 
     public static void main(String[] args) throws IOException {

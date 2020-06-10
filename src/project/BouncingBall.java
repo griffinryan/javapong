@@ -2,6 +2,7 @@ package project;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
 
 public class BouncingBall extends Sprite {
 	Color color = Color.RED;
@@ -15,9 +16,9 @@ public class BouncingBall extends Sprite {
     }
 
     public void paint(Graphics g) {
-    //	Random r = new Random();
-    	//g.setColor(new Color(r.nextInt(256), r.nextInt(256), r.nextInt(256))); //random color changing but too fast
-    	g.setColor(color);
+    	Random r = new Random();
+    	g.setColor(new Color(r.nextInt(256), r.nextInt(256), r.nextInt(256))); //random color changing but too fast
+    	// g.setColor(color);
         g.fillOval(getX(), getY(), getWidth(), getHeight());
     }
 }

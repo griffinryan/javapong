@@ -21,7 +21,7 @@ public class PongPanel extends JPanel {
 	private JLabel scoreLabel;
 	private int score = 0;
 	Timer timer;
-	int speed = 5;
+	int speed = 4;
 	
 	public PongPanel(PingPong game) {
 		racket = new Player(game, game.getHeight() - 100);
@@ -43,15 +43,23 @@ public class PongPanel extends JPanel {
 
 		addKeyListener(new KeyHandler());
 		setFocusable(true);
+
+		/* Set background of frame to darker color to track the ball easier. */
+		setBackground(Color.DARK_GRAY);
 	}
 	private class TimerHandler implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			//speed up ball at score 5 but come back to normal speed right after that.
-			if(score % 5 == 0 && score!= 0) {
-				timer = new Timer(speed+1, new TimerHandler());
+			// speed up ball at score 5 but come back to normal speed right after that.
+			/*	Tried to making the speed incrementation obvious, but not as hard to
+				beat. Doesn't work though. Just start with lower speed instead. Speed = 4. */
+			if(score >= 5) {
+				timer = new Timer(speed + 1, new TimerHandler());
+				update();
+			} else if(score >= 10){
+				timer = new Timer(speed + 2, new TimerHandler());
 				update();
 			}
 			update();
