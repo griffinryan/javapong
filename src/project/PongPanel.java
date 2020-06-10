@@ -21,12 +21,26 @@ public class PongPanel extends JPanel {
 	private JLabel scoreLabel;
 	private int score = 0;
 	Timer timer;
-	int speed = 6;	// START WITH SPEED 6 TO MAKE SPEED JUMP EASIER.
+	int speed;
 	
 	public PongPanel(PingPong game) {
 		racket = new Player(game, game.getHeight() - 100);
 		ball = new BouncingBall(game);
+		//Show up difficult option to pick
+		String userInput = JOptionPane.showInputDialog("Difficult Level: \n1 for Turtle Mode "
+				+ "\n2 for Normal \n3 for Flash Mode");
+		speed = Integer.parseInt(userInput);
+		if (!userInput.equalsIgnoreCase("1") && !userInput.equalsIgnoreCase("2")&& !userInput.equalsIgnoreCase("3"))
+			// catch wrong inputs
+			JOptionPane.showMessageDialog(null, "Please type in number only");
+		if (userInput.equalsIgnoreCase("1"))
+			speed = 6;
 
+		if (userInput.equalsIgnoreCase("2"))
+			speed = 5;
+		
+		if (userInput.equalsIgnoreCase("3"))
+			speed = 2;
 		/* 	Using Font.CENTER_BASELINE allows for a
 			bolder score. Easier on the eyes while looking at the ball.	*/
 		scoreLabel = new JLabel(Integer.toString(score));
@@ -55,10 +69,10 @@ public class PongPanel extends JPanel {
 			// speed up ball at score 5 but come back to normal speed right after that.
 			/*	Tried to making the speed incrementation obvious, but not as hard to
 				beat. Doesn't work though. Just start with lower speed instead. Speed = 4. */
-			if(score >= 5) {
+			if(score >= 5 ) {
 				timer = new Timer(speed - 1, new TimerHandler());
 				update();
-			} else if(score >= 10){
+			} else if(score >= 6){
 				timer = new Timer(speed - 2, new TimerHandler());
 				update();
 			}
