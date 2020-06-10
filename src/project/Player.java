@@ -5,8 +5,10 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 
 public class Player extends Sprite {
+
     private final PingPong game;
-    Color color = Color.BLUE;
+    // Removed local color variable.
+
     public Player(PingPong game, int y) {
         super((game.getWidth() - 60) / 2, y, 0, 0, 60, 10, Color.BLUE);
         this.game = game;
@@ -32,7 +34,7 @@ public class Player extends Sprite {
     }
 
     public void paint(Graphics g) {
-    	g.setColor(color);
+    	g.setColor(Color.MAGENTA);
         g.fillRect(getX(), getY(), getWidth(), getHeight());
     }
 }

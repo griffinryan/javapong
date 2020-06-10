@@ -14,6 +14,7 @@ import javax.swing.Timer;
 
 @SuppressWarnings("serial")
 public class PongPanel extends JPanel {
+
 	private Player racket;
 	private BouncingBall ball;
 	private JLabel scoreLabel;
@@ -25,8 +26,11 @@ public class PongPanel extends JPanel {
 		racket = new Player(game, game.getHeight() - 100);
 		ball = new BouncingBall(game);
 
+		/* 	Using Font.CENTER_BASELINE allows for a
+			bolder score. Easier on the eyes while looking at the ball.	*/
 		scoreLabel = new JLabel(Integer.toString(score));
-		scoreLabel.setFont(new Font("arial", Font.PLAIN, 30));
+		scoreLabel.setFont(new Font("arial", Font.CENTER_BASELINE, 30));
+		// Add JLabel, but now with an easier to see font.
 		add(scoreLabel);
 
 		timer = new Timer(speed, new TimerHandler());
@@ -36,6 +40,7 @@ public class PongPanel extends JPanel {
 		setFocusable(true);
 	}
 	private class TimerHandler implements ActionListener {
+
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
@@ -47,6 +52,7 @@ public class PongPanel extends JPanel {
 			update();
 			
 		}
+
 	}
 
 	private void update() {
@@ -54,6 +60,7 @@ public class PongPanel extends JPanel {
 		ball.newPosition();
 		hitSidesCheck();
 		hitRacketCheck();
+
 		repaint();
 	}
 
@@ -99,6 +106,7 @@ public class PongPanel extends JPanel {
 
 	@Override
 	public void paint(Graphics g) {
+
 		super.paint(g);
 		racket.paint(g);
 		ball.paint(g);

@@ -55,6 +55,7 @@ public class PingPong extends JFrame {
 		frame.setVisible(true);
 		return board;		
 	}
+	
     public PingPong() {
         super("PingPong by Team 5");
         setSize(800, 500);
