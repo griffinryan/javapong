@@ -6,9 +6,11 @@ import java.util.Random;
 
 public class BouncingBall extends Sprite {
 
-    int colorCount = 0; // Set a counter to make color change not flash.
-    int red, green, blue;
-    // Removed color variable.
+    int colorCount = 0; // Set a counter to make color change not flash. Could be boolean.
+    int red = 80;
+    int blue = 255;
+    int green = 0;
+    // Removed color variable. Added color int variables.
 
     public BouncingBall(PingPong game) {
         super(0, 0, 1, 1, 30, 30, Color.RED);
@@ -20,9 +22,25 @@ public class BouncingBall extends Sprite {
     }
 
     public void paint(Graphics g) {
-        Random r = new Random();
+        /* Update color values for glow. */
+        if(red >= 80 && red <= 254){
+            red = red + 1;
+            if(red == 254){
+                // Set count equal to 1 for reversing glow.
+                colorCount = 1;
+            }
+        } else if(red >= 254 || colorCount == 1){
+            red = red - 1;
+            if(red == 80){
+                // Set count equal to 0.
+                colorCount = 0;
+            }
+        }
+
         g.setColor(new Color(red, green, blue));
-    	// g.setColor(color);
+        
+        // Random r = new Random(); No longer needed with incrementing color.
+    	// g.setColor(color);   No longer needed with incrementing color.
         g.fillOval(getX(), getY(), getWidth(), getHeight());
     }
 }
