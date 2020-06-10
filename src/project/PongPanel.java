@@ -92,7 +92,7 @@ public class PongPanel extends JPanel {
 			if (score >= 5) {
 				timer = new Timer(speed - 1, new TimerHandler());
 				update();
-			} else if (score >= 6) {
+			} else if (score >= 10) {
 				timer = new Timer(speed - 2, new TimerHandler());
 				update();
 			}
