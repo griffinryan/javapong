@@ -1,5 +1,6 @@
 package project;
 
+import java.awt.Color;	// Needed to set font to higher contrast color.
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -30,7 +31,11 @@ public class PongPanel extends JPanel {
 			bolder score. Easier on the eyes while looking at the ball.	*/
 		scoreLabel = new JLabel(Integer.toString(score));
 		scoreLabel.setFont(new Font("arial", Font.CENTER_BASELINE, 30));
-		// Add JLabel, but now with an easier to see font.
+
+		/*	To set the color of the font, the setForeground()
+			must be called. Since background is dark grey, the text
+			should have more contrast. Set to white for now.	*/
+		scoreLabel.setForeground(Color.WHITE);
 		add(scoreLabel);
 
 		timer = new Timer(speed, new TimerHandler());
