@@ -21,7 +21,7 @@ public class PongPanel extends JPanel {
 	private JLabel scoreLabel;
 	private int score = 0;
 	Timer timer;
-	int speed = 4;	// START WITH SPEED 4 TO MAKE SPEED JUMP EASIER.
+	int speed = 6;	// START WITH SPEED 6 TO MAKE SPEED JUMP EASIER.
 	
 	public PongPanel(PingPong game) {
 		racket = new Player(game, game.getHeight() - 100);
@@ -56,10 +56,10 @@ public class PongPanel extends JPanel {
 			/*	Tried to making the speed incrementation obvious, but not as hard to
 				beat. Doesn't work though. Just start with lower speed instead. Speed = 4. */
 			if(score >= 5) {
-				timer = new Timer(speed + 1, new TimerHandler());
+				timer = new Timer(speed - 1, new TimerHandler());
 				update();
 			} else if(score >= 10){
-				timer = new Timer(speed + 2, new TimerHandler());
+				timer = new Timer(speed - 2, new TimerHandler());
 				update();
 			}
 			update();
