@@ -58,7 +58,7 @@ public class PingPong extends JFrame {
 
     public PingPong() {
         super("PingPong by Team 5");
-        setSize(800, 500);
+        setSize(700, 500);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         add(new PongPanel(this));
