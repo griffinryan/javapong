@@ -44,6 +44,10 @@ public class PongPanel extends JPanel {
 			}
 			// catching letter input
 		} catch (Exception e) {
+			// exit the game without making any choice 
+			//without this if statement user will be kept sending back to difficult option panel
+			if(userInput== null)
+				System.exit(0);
 			JOptionPane.showMessageDialog(null, "Please type in number only");
 			input();// return to difficult option panel
 		}
