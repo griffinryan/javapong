@@ -2,7 +2,7 @@
 
 ![pong.gif](https://torpoisebucket.s3-us-west-2.amazonaws.com/pong.gif)
 
-Source code for a Pong game by Tan Nguyen and Griffin Ryan.
+Source code for a Pong game by Tan Nguyen, Joseph Heitman, Maryanne Choeun, and Griffin Ryan.
 
 Built on Java.
 
@@ -23,7 +23,7 @@ the following at the command-line.
 
 Open the src code in your favorite Java-equipped IDE or text editor!
 
-## By Tan Nguyen and Griffin Ryan
+## By Tan Nguyen, Joseph Heitman, Maryanne Choeun, and Griffin Ryan
 
 Here is a screenshot of an early build of the game.
 
